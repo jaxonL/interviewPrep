@@ -11,10 +11,23 @@
 # [13, 4, 1] however, should return false, since there is no way to modify
 # just one element to make the array non-decreasing.
 
+# Can you find a solution in O(n) time?
+
 
 def check(lst):
-  # Fill this in.
-  pass
+    # idea: if all differences between the numbers are non-negative (>= 0)
+    # with at most 1 negative value, then the array can be non-decreasing
+    
+    # using range loop because what to test wrt next element
+    seen_negative = False
+    for i in range(1, len(lst)):
+        if lst[i] - lst[i - 1] < 0:
+            if seen_negative:
+                return False
+            else:
+                # first seen negative
+                seen_negative = True
+    return True
 
 print(check([13, 4, 7]))
 # True
