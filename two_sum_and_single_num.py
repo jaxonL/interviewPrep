@@ -29,8 +29,15 @@ print(single_number([4, 3, 2, 4, 1, 3, 2]))
 # Try to do it in a single pass of the list.
 
 def two_sum(lst, k):
-    # Fill this in.
-    pass
+    # idea: keep track of what is needed/being looked for and if
+    # found, return True
+    complements = set()
+    for val in lst:
+        if val in complements:
+            return True
+        complements.add(k - val)
+    return False
 
 print(two_sum([4,7,1,-3,2], 5))
 # True
+print(two_sum([4,7,-1,-3,2], 5))
