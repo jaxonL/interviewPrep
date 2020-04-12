@@ -13,7 +13,12 @@
 # solution involved using bit-wise XOR (for O(1) memory) to get the last integer.
 
 def single_number(nums):
-    pass
+    # assuming nums has at least 1 value
+    single = 0
+    for i in nums:
+        single ^= i
+        # print(single)
+    return single
 
 print(single_number([4, 3, 2, 4, 1, 3, 2]))
 # 1
