@@ -13,7 +13,6 @@
 
 # Can you find a solution in O(n) time?
 
-
 def check(lst):
     # idea: if all differences between the numbers are non-negative (>= 0)
     # with at most 1 negative value, then the array can be non-decreasing
